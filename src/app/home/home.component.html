@@ -1,3 +1,20 @@
-<textarea rows="5" placeholder="what's on your mind">
-
-</textarea>
+<div class="container"
+    fxLayout="column"
+    fxLayoutGap="10px">
+    <div fxFlex="100">
+        <div fxFlex fxFlex.gt-sm="20%">
+            <img src="assets/images/logo.png" alt="Logo">
+        </div>
+        <div fxFlex >
+            <h3>Let's see your Dark Side😈😈</h3>
+            <form>
+                <mat-form-field class="full-width">
+                    <textarea matInput placeholder="Anything you want to say....?"
+                            rows=7></textarea>
+                </mat-form-field>
+                <button type="submit" mat-button class="background-primary text-floral-white">Post</button>
+            </form>      
+        </div>
+    </div>
+   <app-feed></app-feed>
+</div>
