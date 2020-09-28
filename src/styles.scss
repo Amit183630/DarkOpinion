@@ -5,7 +5,7 @@
 $lt-gray: #ddd;
 $background-dark: #223497;
 $background-light: #9575CD;
-$background-pale: #D1C4E9;
+$background-pale: #d3edff;
 $primary-color-dark:   #512DA8;
 $primary-color:        #673AB7;
 $primary-color-light:  #D1C4E9;
@@ -34,6 +34,10 @@ body{
 .background-primary {
     background-color: $background-dark!important;
   }
+
+.background-card{
+  background-color: $background-pale;
+}
 .background-accent {
     background-color: $accent-color!important;
   }
@@ -51,3 +55,4 @@ body{
   z-index: 1;
   transform: scale(1.01);
 }
+
