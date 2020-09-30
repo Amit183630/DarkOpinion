@@ -9,6 +9,13 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
+import { MatSidenavModule} from '@angular/material/sidenav';
+import { MatProgressSpinnerModule } from '@angular/material';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatCheckboxModule } from "@angular/material/checkbox";
+
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { FormsModule } from "@angular/forms";
 
@@ -21,6 +28,8 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FeedComponent } from './feed/feed.component';
+import { DarkSocietyComponent } from './dark-society/dark-society.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +39,9 @@ import { FeedComponent } from './feed/feed.component';
     AboutComponent,
     ContactComponent,
     ProfileComponent,
-    FeedComponent
+    FeedComponent,
+    DarkSocietyComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -43,8 +54,16 @@ import { FeedComponent } from './feed/feed.component';
     FormsModule,
     MatInputModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    MatSidenavModule,
+    MatProgressSpinnerModule,
+    MatDialogModule,
+    MatCheckboxModule,
+    HttpClientModule
   ],
+  entryComponents:[
+    LoginComponent
+  ]
   providers: [],
   bootstrap: [AppComponent]
 })

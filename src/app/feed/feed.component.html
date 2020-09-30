@@ -1,17 +1,15 @@
-<div fxFlex>
+<div fxFlex >
   <h3>Your Feed</h3>
-  <mat-card >
+  <div *ngIf="feeds">
+  <mat-card *ngFor="let feed of feeds">
     <mat-card-header>
       <mat-card-title>
-        <h3 matLine class="auther-name">--Amit Kumar Gupta</h3>
+        <h3 matLine class="auther-name">--{{feed.username}}</h3>
       </mat-card-title>
     </mat-card-header>
     
     <mat-card-content class="center background-card">
-      <p matLine>Unfortunately, people say some strange things in an effort to
-        make someone else feel better.Most of these statements are things
-         we've learned.
-     </p>
+      <p matLine> {{feed.description}} </p>
     </mat-card-content>
 
     <mat-card-actions>
@@ -21,45 +19,14 @@
 
     </mat-card-actions>
   </mat-card>
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>
-        <h3 matLine class="auther-name">--Shiv Kumar Sharma</h3>
-      </mat-card-title>
-    </mat-card-header>
-    
-    <mat-card-content class="center background-card">
-      <p matLine>Unfortunately, people say some strange things in an effort to
-        make someone else feel better.Most of these statements are things
-         we've learned.
-     </p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button><span class="fa fa-handshake-o fa-lg"></span> Agree</button>
-      <button mat-button><span class="fa fa-thumbs-down fa-lg"></span> Disagree</button>
-      <button mat-button><span class="fa fa-comments fa-lg"></span> Comment</button>
-
-    </mat-card-actions>
-  </mat-card>
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>
-        <h3 matLine class="auther-name">--Amit Kumar Gupta</h3>
-      </mat-card-title>
-    </mat-card-header>
-    
-    <mat-card-content class="center background-card">
-      <p matLine>Unfortunately, people say some strange things in an effort to
-        make someone else feel better.Most of these statements are things
-         we've learned.
-     </p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button><span class="fa fa-handshake-o fa-lg"></span> Agree</button>
-      <button mat-button><span class="fa fa-thumbs-down fa-lg"></span> Disagree</button>
-      <button mat-button><span class="fa fa-comments fa-lg"></span> Comment</button>
-
-    </mat-card-actions>
-  </mat-card>
-
+  
+  </div>
+  <div [hidden]="feeds||errMess">
+    <mat-spinner></mat-spinner><h4>Loading . . . Please Wait</h4>
+  </div>
+  <div *ngIf="errMess">
+    <mat-error>
+      {{errMess}}
+    </mat-error>
+  </div>
 </div>
