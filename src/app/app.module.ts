@@ -63,7 +63,7 @@ import { LoginComponent } from './login/login.component';
   ],
   entryComponents:[
     LoginComponent
-  ]
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
