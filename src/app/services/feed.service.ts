@@ -15,4 +15,12 @@ export class FeedService {
   getFeeds():Observable<Opinion[]>{
     return this.http.get<Opinion[]>(baseURL+'feeds').pipe(catchError(this.processhttpmsg.handleError));
   }
+  postOpinion(opinion:Opinion):Observable<Opinion>{
+    const httpOptions={
+      headers:new HttpHeaders({
+        'Content-Type':'application/json'
+      })
+    }
+    return this.http.post<Opinion>(baseURL+'feeds',opinion,httpOptions).pipe(catchError(this.processhttpmsg.handleError));
+  }
 }

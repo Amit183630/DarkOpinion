@@ -11,9 +11,10 @@ import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatSidenavModule} from '@angular/material/sidenav';
 import { MatProgressSpinnerModule } from '@angular/material';
+import { MatProgressBarModule } from '@angular/material/progress-bar'
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCheckboxModule } from "@angular/material/checkbox";
-
+import { ReactiveFormsModule } from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -30,6 +31,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { FeedComponent } from './feed/feed.component';
 import { DarkSocietyComponent } from './dark-society/dark-society.component';
 import { LoginComponent } from './login/login.component';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -59,7 +61,9 @@ import { LoginComponent } from './login/login.component';
     MatProgressSpinnerModule,
     MatDialogModule,
     MatCheckboxModule,
-    HttpClientModule
+    MatProgressBarModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   entryComponents:[
     LoginComponent

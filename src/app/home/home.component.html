@@ -8,14 +8,23 @@
 
         <div fxFlex >
             <h3>Let's see your Dark Side😈😈</h3>
-            <form>
+            <form novalidate [formGroup]="opinionForm" #oform="ngForm" (ngSubmit)="onSubmit()">
                 <mat-form-field class="full-width">
-                    <textarea matInput placeholder="Anything you want to say....?"
+                    <textarea matInput formControlName="description" placeholder="You can say anything you want....?"
                             rows=7></textarea>
                 </mat-form-field>
                 <button type="submit" mat-button class="background-primary text-floral-white">Post</button>
-            </form>      
+            </form>
+            <div *ngIf="showSpinner">
+                <mat-progress-bar mode="buffer"></mat-progress-bar>
+                <h3>😌😌Please wait.... while we are posting your Opinion</h3>
+            </div>  
+            <div *ngIf="errMess">
+                <mat-error>
+                  {{errMess}}
+                </mat-error>
+            </div>
         </div>
     </div>
-   <app-feed></app-feed>
+   <app-feed [feeds]="feeds"></app-feed>
 </div>

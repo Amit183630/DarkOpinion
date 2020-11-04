@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { Opinion } from "../shared/opinion";
 import { FeedService } from "../services/feed.service";
 @Component({
@@ -7,14 +7,12 @@ import { FeedService } from "../services/feed.service";
   styleUrls: ['./feed.component.scss']
 })
 export class FeedComponent implements OnInit {
-  feeds:Opinion[];
+  @Input() feeds:Opinion[];
   errMess:string
   constructor(private FeedService:FeedService) { }
 
   ngOnInit() {
-    this.FeedService.getFeeds().
-    subscribe(feeds=>{this.feeds=feeds;console.log(this.feeds)},
-    errMess=>this.errMess=errMess);
+    
   }
 
 }
