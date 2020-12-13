@@ -43,10 +43,12 @@ export class HomeComponent implements OnInit {
       },
       err=>{
         this.errMess=<any>err;
+        this.showSpinner=false;
       });
     },
     err=>{
       this.errMess=<any>err;
+      this.showSpinner=false;
     });
   }
 

@@ -13,7 +13,7 @@ export class FeedService {
 
   constructor(private http:HttpClient,private processhttpmsg:ProcessHttpmsgService) { }
   getFeeds():Observable<Opinion[]>{
-    return this.http.get<Opinion[]>(baseURL+'feeds').pipe(catchError(this.processhttpmsg.handleError));
+    return this.http.get<Opinion[]>(baseURL+'opinions').pipe(catchError(this.processhttpmsg.handleError));
   }
   postOpinion(opinion:Opinion):Observable<Opinion>{
     const httpOptions={
@@ -21,6 +21,6 @@ export class FeedService {
         'Content-Type':'application/json'
       })
     }
-    return this.http.post<Opinion>(baseURL+'feeds',opinion,httpOptions).pipe(catchError(this.processhttpmsg.handleError));
+    return this.http.post<Opinion>(baseURL+'opinions',opinion,httpOptions).pipe(catchError(this.processhttpmsg.handleError));
   }
 }

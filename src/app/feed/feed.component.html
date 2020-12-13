@@ -4,7 +4,7 @@
   <mat-card *ngFor="let feed of feeds">
     <mat-card-header>
       <mat-card-title>
-        <h3 matLine class="auther-name">--{{feed.username}}</h3>
+        <h3 matLine class="auther-name">--{{feed.author.username|uppercase}}</h3>
       </mat-card-title>
     </mat-card-header>
     
